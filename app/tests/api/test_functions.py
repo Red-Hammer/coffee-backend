@@ -18,6 +18,5 @@ from app.api.functions import get_journal_entries
 @pytest.mark.asyncio
 async def test_get_journal_entry_success(expected):
     actual = await get_journal_entries()
-    print(actual)
 
     assert actual == expected
