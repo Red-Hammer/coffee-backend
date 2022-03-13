@@ -45,3 +45,12 @@ async def write_journal():
         body = request.json
         await write_journal_entry(body)
         return csr({'Status': 'Success'})
+
+
+@bp.route('/delete-entry/<int:entry_id>/', methods=['POST', 'OPTIONS'])
+async def delete_entry(entry_id):
+    if request.method == 'OPTIONS':
+        return pre_flight()
+
+    if request.method == 'POST':
+        return csr({'Status': 'You deleted entry with id:{}'.format(entry_id)})
