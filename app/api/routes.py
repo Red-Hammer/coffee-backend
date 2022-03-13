@@ -47,7 +47,7 @@ async def write_journal():
         return csr({'Status': 'Success'})
 
 
-@bp.route('/delete-entry/<int:entry_id>/', methods=['POST', 'OPTIONS'])
+@bp.route('/delete-entry/<int:entry_id>', methods=['POST', 'OPTIONS'])
 async def delete_entry(entry_id):
     if request.method == 'OPTIONS':
         return pre_flight()
