@@ -28,6 +28,7 @@ class CoffeeJournal(db.Model):
         """
         # Need to test this with more than one row at a time
         return {
+            'id': self.id,
             'entry_datetime': self.entry_datetime,
             'coffee_name': self.coffee_name,
             'rating': self.rating,

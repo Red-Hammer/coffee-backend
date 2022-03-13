@@ -37,6 +37,7 @@ def test_new_record(entry_datetime, coffee_name, rating, flavor_notes) -> None:
                     4,
                     'some test notes',
                     {
+                        'id': None, # because we aren't writing, the db never gives an id
                         'entry_datetime': datetime.datetime(2022, 1, 1, 12, 2, 1, 0),
                         'coffee_name': 'Test',
                         'rating': 4,

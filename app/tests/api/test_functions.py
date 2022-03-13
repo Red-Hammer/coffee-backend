@@ -8,9 +8,9 @@ from app.api.functions import get_journal_entries, write_journal_entry
         'expected',
         [
             (
-                    [{'entry_datetime': datetime.datetime(2022, 1, 1, 12, 0), 'coffee_name': 'Test Coffee', 'rating': 7,
+                    [{'id': 1,'entry_datetime': datetime.datetime(2022, 1, 1, 12, 0), 'coffee_name': 'Test Coffee', 'rating': 7,
                       'flavor_notes': 'Bold,Fruity,Dark Chocolate'},
-                     {'entry_datetime': datetime.datetime(2022, 1, 1, 11, 0), 'coffee_name': 'Test Coffee 2',
+                     {'id': 2,'entry_datetime': datetime.datetime(2022, 1, 1, 11, 0), 'coffee_name': 'Test Coffee 2',
                       'rating': 4,
                       'flavor_notes': 'Milk Chocolate'}]
             )
@@ -30,7 +30,7 @@ async def test_get_journal_entries_success(expected):
                     {'entry_datetime': datetime.datetime(2022, 1, 1, 12, 0), 'coffee_name': 'Test New Coffee',
                      'rating': 10,
                      'flavor_notes': 'Bold,Fruity,Caramel'},
-                    {'entry_datetime': datetime.datetime(2022, 1, 1, 12, 0), 'coffee_name': 'Test New Coffee',
+                    {'id': 3, 'entry_datetime': datetime.datetime(2022, 1, 1, 12, 0), 'coffee_name': 'Test New Coffee',
                      'rating': 10,
                      'flavor_notes': 'Bold,Fruity,Caramel'}
             )
