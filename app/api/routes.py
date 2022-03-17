@@ -4,7 +4,7 @@ from app.utils import construct_standard_response as csr, \
     build_cors_preflight_response as pre_flight
 
 from app.api import bp
-from app.api.functions import get_journal_entries, write_journal_entry
+from app.api.functions import get_journal_entries, write_journal_entry, delete_journal_entry
 
 
 @bp.route('/test', methods=['GET', 'OPTIONS'])
@@ -53,4 +53,5 @@ async def delete_entry(entry_id):
         return pre_flight()
 
     if request.method == 'POST':
+        await delete_journal_entry(entry_id)
         return csr({'Status': 'You deleted entry with id:{}'.format(entry_id)})
