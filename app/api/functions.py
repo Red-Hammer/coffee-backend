@@ -29,7 +29,7 @@ async def write_journal_entry(journal_entry: Dict, account_id: int = None) -> No
 
 async def delete_journal_entry(entry_id: int, account_id: int = None):
     if not account_id:
-        record_to_delete = CoffeeJournal.query.filter_by(id=entry_id).first()
+        record_to_delete = CoffeeJournal.query.get(entry_id)
         if record_to_delete:
             db.session.delete(record_to_delete)
             db.session.commit()
